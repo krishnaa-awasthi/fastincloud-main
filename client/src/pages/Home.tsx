@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
+import AboutUsSection from "@/components/AboutUsSection";
+import { CaseStudiesSection } from "@/components/CaseStudiesSection";
 import { Footer } from "@/components/Footer";
 import { DemoModal } from "@/components/DemoModal";
-import AboutUsSection from "@/components/AboutUsSection";
-//import { CyberSecurityDiagram } from "@/components/CyberSecurityDiagram";
 
 export default function Home() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
@@ -65,10 +65,19 @@ export default function Home() {
               : "opacity-0 translate-y-10"
           }`}
         >
-          <AboutUsSection/>
+          <AboutUsSection />
         </div>
-        
-        
+
+        <div
+          id="section-case-studies"
+          className={`transition-all duration-1000 transform ${
+            isVisible["section-case-studies"]
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+          }`}
+        >
+          <CaseStudiesSection />
+        </div>
 
         <Footer />
       </main>

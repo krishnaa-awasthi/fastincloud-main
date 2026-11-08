@@ -1,4 +1,3 @@
-// App.tsx
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -8,7 +7,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/not-found";
 import CookieConsent from "./components/CookieConsent";
 
-// Import your new DPDP compliance and legal pages
+// Legal & Compliance Pages
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
 import CookiePolicyPage from "./pages/CookiePolicyPage";
@@ -16,8 +15,10 @@ import SecurityPage from "./pages/SecurityPage";
 import GrievancePage from "./pages/GrievancePage";
 import DSARPage from "./pages/DSARPage";
 
+// Resource & Blog Page
+import BlogsPage from "./pages/BlogsPage";
+
 /*
-import BlogsPage from "@/pages/BlogsPage";
 import SmartData from "./pages/SmartData";
 import DemandGeneration from "./pages/DemandGeneration";
 import EventAudienceOutreach from "./pages/EventAudienceOutreach";
@@ -27,7 +28,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      
+
       {/* Legal & Compliance Routes */}
       <Route path="/privacy-policy" component={PrivacyPolicyPage} />
       <Route path="/terms-of-service" component={TermsOfServicePage} />
@@ -36,11 +37,15 @@ function Router() {
       <Route path="/grievance" component={GrievancePage} />
       <Route path="/privacy-request" component={DSARPage} />
 
-      {/* <Route path="/blogs" component={BlogsPage} /> */}
-      {/*<Route path="/smart-data" component={SmartData} />
+      {/* Insights & Blog Archive Route */}
+      <Route path="/blogs" component={BlogsPage} />
+
+      {/*
+      <Route path="/smart-data" component={SmartData} />
       <Route path="/demand-generation" component={DemandGeneration}/>
       <Route path="/eventAudience-outreach" component={EventAudienceOutreach}/>
       */}
+
       <Route component={NotFound} />
     </Switch>
   );
@@ -57,4 +62,5 @@ function App() {
     </QueryClientProvider>
   );
 }
+
 export default App;
